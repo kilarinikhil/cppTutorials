@@ -5,6 +5,12 @@ using namespace std;
 class GradeBook{
 	
 	public:
+		//explicit means only one argument passed for function
+		explicit GradeBook(string name)
+		:courseName(name)// ":" denotes member initializer
+		{}
+		
+		
 		void setCourseName(string name){
 			courseName = name;
 		}
@@ -23,17 +29,11 @@ class GradeBook{
 
 int main(){
 	string nameOfCourse;
-	GradeBook myGradeBook;
+	//pass string to initialization
+	GradeBook gradeBook1("Machine Learning"),gradeBook2("Deep Learning");
 	
-	cout<<"Enter the name of the course "<<endl;
-	getline(cin,nameOfCourse);//prompt
-	
-	myGradeBook.setCourseName(nameOfCourse);
-	myGradeBook.displayMessage();
+	gradeBook1.displayMessage();
+	gradeBook2.displayMessage();
 	
 	return 0;
 }
-/*
-Points to remember
-you can only a const function in another const function.
-*/
